@@ -37,3 +37,5 @@ This is a simple Node.js application that creates a mini message board. Users ca
    ```
 
 Access the message board in your browser at http://localhost:3000/.
+
+Deployed project link: https://node-message-board.onrender.com/
