@@ -26,16 +26,14 @@ This is a simple Node.js application that creates a mini message board. Users ca
 
 2. Install dependencies:
 
-   ```Bash
+   ```bash
    npm install
    ```
 
-3. Usage:
+3. Start the server:
 
-Start the server:
-
-    ```Bash
+   ```bash
     node index.js
-    ```
+   ```
 
 Access the message board in your browser at http://localhost:3000/.
