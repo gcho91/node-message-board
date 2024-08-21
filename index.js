@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("node:path");
 const app = express();
+const port = process.env.PORT || 3001;
 
 const messages = [
   {
@@ -51,5 +52,5 @@ app.get("/messages/:id", (req, res) => {
   res.render("messageDetails", { message: message });
 });
 app.listen(3000, (req, res) => {
-  console.log("listening on port 3000");
+  console.log(`listening on port ${port} `);
 });
