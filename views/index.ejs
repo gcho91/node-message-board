@@ -7,8 +7,8 @@
             <% messages.forEach(function(message) { %>
                 <li>
                     <strong>
-                        <%= message.user %>
-                    </strong>: <%= message.text %>
+                        <%= message.author %>
+                    </strong>: <%= message.message %>
                         <a href="/messages/<%= message.id %>">Open</a>
                 </li>
                 <% }); %>

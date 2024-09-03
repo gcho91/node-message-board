@@ -11,7 +11,7 @@
     <ul>
         <li>
             <strong>Message:</strong>
-            <%= message.text %>
+            <%= message.message %>
         </li>
         <li>
             <strong>ID:</strong>
@@ -19,11 +19,11 @@
         </li>
         <li>
             <strong>Author:</strong>
-            <%= message.user %>
+            <%= message.author %>
         </li>
         <li>
             <strong>Timestamp:</strong>
-            <%= message.added.toLocaleString() %>
+            <%= message.created_at %>
         </li>
     </ul>
 
