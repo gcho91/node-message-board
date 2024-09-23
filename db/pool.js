@@ -9,7 +9,6 @@ const pool = new Pool({
   password: process.env.SECRET,
   port: process.env.PORT,
   connectionString: process.env.DATABASE_URL, // This is for Render
-
   ssl: {
     rejectUnauthorized: false, // Required for connecting to managed databases over SSL
   },

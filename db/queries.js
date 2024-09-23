@@ -13,7 +13,7 @@ async function getMessageById(messageId) {
 }
 
 async function postNewMessage(authorName, message) {
-  await pool.query("INSERT INTO messages (message, author) VALUES ($1, $2)", [
+  await pool.query("INSERT INTO messages (author, message) VALUES ($1, $2)", [
     authorName,
     message,
   ]);

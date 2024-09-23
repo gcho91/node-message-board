@@ -8,7 +8,7 @@
                 <li>
                     <strong>
                         <%= message.author %>
-                    </strong>: <%= message.message %>
+                    </strong>:&nbsp;<%= message.message %> <!-- Non-breaking space -->
                         <a href="/messages/<%= message.id %>">Open</a>
                 </li>
                 <% }); %>
