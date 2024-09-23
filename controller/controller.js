@@ -3,8 +3,6 @@ const db = require("../db/queries");
 async function getMessages(req, res) {
   try {
     const messages = await db.getAllMessages();
-    console.log("messages ", messages);
-
     res.render("index", { title: "Mini Message Board", messages: messages });
   } catch (err) {
     console.error("Error fetching messages: ", err);
@@ -29,7 +27,6 @@ async function findMessageById(req, res) {
 
 async function postNewMessage(req, res) {
   const { authorName, message } = req.body;
-  console.log("message details in post ", authorName, message);
   try {
     await db.postNewMessage(authorName, message);
     res.redirect("/");
@@ -38,8 +35,21 @@ async function postNewMessage(req, res) {
     res.status(500).send("Server Error");
   }
 }
+
+async function handleDeleteRequest(req, res) {
+  const messageId = req.params.id;
+
+  try {
+    await db.deleteMessage(messageId);
+    res.redirect("/");
+  } catch (err) {
+    console.error("Error deleting message ", err);
+    res.status(500).send("Server Error");
+  }
+}
 module.exports = {
   getMessages,
   findMessageById,
   postNewMessage,
+  handleDeleteRequest,
 };

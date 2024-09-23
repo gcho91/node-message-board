@@ -18,8 +18,13 @@ async function postNewMessage(authorName, message) {
     message,
   ]);
 }
+
+async function deleteMessage(messageId) {
+  await pool.query("DELETE FROM messages WHERE id = $1", [messageId]);
+}
 module.exports = {
   getAllMessages,
   getMessageById,
   postNewMessage,
+  deleteMessage,
 };
